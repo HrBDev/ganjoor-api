@@ -1,4 +1,4 @@
-FROM node:7
+FROM node:lts
 
 COPY *.json /data/ganjoor-api/
 COPY *.yaml /data/ganjoor-api/
