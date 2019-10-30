@@ -10,31 +10,31 @@ router.get('/poets', (req, res, next) => {
 });
 
 router.get('/poets/:id', (req, res, next) => {
-  Poet.findById(req.params.id)
+  Poet.findById(Number.parseInt(req.params.id))
     .then(result => res.json(result))
     .catch(err => next(err));
 });
 
 router.get('/categories/:categoryId', (req, res, next) => {
-  Category.findById(req.params.categoryId)
+  Category.findById(Number.parseInt(req.params.categoryId))
     .then(result => res.json(result))
     .catch(err => next(err));
 });
 
 router.get('/categories/byPoet/:id', (req, res, next) => {
-  Category.findByPoetId(req.params.id)
+  Category.findByPoetId(Number.parseInt(req.params.id))
     .then(result => res.json(result))
     .catch(err => next(err));
 });
 
 router.get('/poems/:id', (req, res, next) => {
-  Poem.findById(req.params.id)
+  Poem.findById(Number.parseInt(req.params.id))
     .then(result => res.json(result))
     .catch(err => next(err));
 });
 
 router.get('/poems/byCategory/:id', (req, res, next) => {
-  Poem.findAllByCategoryId(req.params.id)
+  Poem.findAllByCategoryId(Number.parseInt(req.params.id))
     .then(result => res.json(result))
     .catch(err => next(err));
 });

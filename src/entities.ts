@@ -54,6 +54,7 @@ export namespace Poet {
         const obj = poet.toJSON();
         return Category.findById(obj.categoryId)
           .then(category => {
+            // @ts-ignore
             const categories = category.toJSON();
             return {
               ...R.omit(['categoryId'], obj),
